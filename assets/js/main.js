@@ -1,3 +1,12 @@
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.header-menu');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active');
+  menu.classList.toggle('open');
+});
+
+
 const swiper = new Swiper('.swiper', {
     slidesPerView: 4,
     loop: true,
@@ -49,15 +58,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
       answer.style.maxHeight = 0;
     }
   });
-});
-
-
-const burger = document.querySelector('.burger');
-const menu = document.querySelector('.header-menu');
-
-burger.addEventListener('click', () => {
-  burger.classList.toggle('active');
-  menu.classList.toggle('open');
 });
 
 document.addEventListener('DOMContentLoaded', () => {
