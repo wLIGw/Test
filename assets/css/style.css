@@ -1,3 +1,7 @@
+@import url('./reset.css');
+
+@import url('./fonts.css');
+
 body {
     font-family: 'Gilroy', sans-serif;
     font-size: 18px;
@@ -352,13 +356,29 @@ body {
     height: 30px;
 }
 
-.section__about{
-    background-image: url('../images/vvv.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 600px;
-    margin-bottom: 100px;
+.section__about {
+    position: relative;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+
+.about__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.about__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.section__about > .container {
+    position: relative;
+    z-index: 2;
 }
 
 .about__title{
@@ -405,6 +425,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    padding-bottom: 100px;
 }
 
 .about__contacts-phone{
@@ -437,6 +458,7 @@ body {
 
 .section__advantages{
     padding-bottom: 100px;
+    padding-top: 100px;
 }
 
 .advantages__wrapper{
@@ -950,10 +972,7 @@ body {
 
 
 @media (max-width: 1080px) {
-.section__about{
-        background-image: url(../images/zzz.png);
-        background-size: cover;
-    }
+
 }
 @media (max-width: 1050px) {
     .contacts__wrapper{
@@ -1046,9 +1065,7 @@ body {
     }
 }
 @media (max-width: 560px) {
-.section__about{
-        background-image: url(../images/mobile-bg.png);
-    }
+
 }
 
 @media (max-width: 500px) {
@@ -1069,10 +1086,11 @@ body {
         
 }
 @media (max-width: 470px) { 
-    .section__about{
-        height: 460px;
-    }
-
+    .about__bg img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
     .services__wrapper{
         display: grid;
         grid-template-columns: 1fr;

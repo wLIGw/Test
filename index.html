@@ -11,8 +11,6 @@
     <link rel="apple-touch-icon" href="/assets/images/logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -160,6 +158,11 @@
 
 <main class="main">
     <section class="section__about">
+        <picture class="about__bg">
+    <source srcset="assets/images/mobile-bg.png" media="(max-width: 560px)">
+    <source srcset="assets/images/zzz.png" media="(max-width: 1080px)">
+    <img src="assets/images/vvv.png" alt="" fetchpriority="high">
+</picture>
         <div class="container">
         <h1 class="about__title">Перетяжка мягкой мебели в Москве</h1>
         <div class="about__wrapper">
@@ -584,8 +587,8 @@
     </a>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
