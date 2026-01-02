@@ -1195,10 +1195,31 @@ padding-bottom: 100px;
         font-size: 28px;  
     }
 
-}
-@media (max-width: 470px) { 
+    .section__advantages{
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
 
-    .services__wrapper{
+    .section__examples {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section__cooperation {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.section__services {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.section__contacts {
+  padding-top: 50px;
+}
+
+ .services__wrapper{
         display: grid;
         grid-template-columns: 1fr;
         
@@ -1221,8 +1242,7 @@ padding-bottom: 100px;
         font-size: 28px;
         line-height: 38px;
         text-align: center;
-        margin-bottom: 20px;
-        padding-top: 40px;
+        margin-bottom: 50px;
     }
     .section__examples-title{
         font-size: 28px;
