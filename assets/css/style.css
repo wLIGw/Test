@@ -358,7 +358,6 @@ body {
 
 .section__about {
     position: relative;
-    min-height: 600px;
     overflow: hidden;
 }
 
@@ -1086,11 +1085,7 @@ body {
         
 }
 @media (max-width: 470px) { 
-    .about__bg img {
-    width: 100%;
-    height: 80%;
-    object-fit: cover;
-}
+
     .services__wrapper{
         display: grid;
         grid-template-columns: 1fr;
