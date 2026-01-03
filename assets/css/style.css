@@ -481,6 +481,7 @@ body {
 .advantages__list{
     line-height: 28px;
     font-size: 16px;
+    text-align: justify;
 }
 
 .advantages__span{
