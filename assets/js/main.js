@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!tgFloat || !tgContacts || !contacts) return;
 
   function handleTG() {
-    // только мобилка
+
     if (window.innerWidth > 770) {
       tgFloat.classList.remove('tg-hidden');
       tgContacts.classList.remove('active');
@@ -104,12 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactsTop = contacts.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
-    if (contactsTop < windowHeight - 330) {
-      // контакты видны
+    if (contactsTop < windowHeight - 265) {
+
       tgFloat.classList.add('tg-hidden');
       tgContacts.classList.add('active');
     } else {
-      // контактов нет
+
       tgFloat.classList.remove('tg-hidden');
       tgContacts.classList.remove('active');
     }
