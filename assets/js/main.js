@@ -1,10 +1,3 @@
-const burger = document.querySelector('.burger');
-const menu = document.querySelector('.header-menu');
-
-burger.addEventListener('click', () => {
-  burger.classList.toggle('active');
-  menu.classList.toggle('open');
-});
 
 
 const swiper = new Swiper('.swiper', {
@@ -42,7 +35,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     const item = btn.closest('.faq-item');
     const answer = item.querySelector('.faq-answer');
 
-    // закрывать остальные
+    
     document.querySelectorAll('.faq-item').forEach(i => {
       if (i !== item) {
         i.classList.remove('active');
@@ -61,13 +54,69 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const tg = document.getElementById('tgFloat');
+  const tg = document.getElementById('tgFloat');
+  const footer = document.querySelector('footer');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            tg.classList.add('active');
-        } else {
-            tg.classList.remove('active');
-        }
-    });
+  if (!tg || !footer) return;
+
+  const baseBottom = 30; 
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const windowH = window.innerHeight;
+
+    
+    if (scrollY > 500) {
+      tg.classList.add('active');
+    } else {
+      tg.classList.remove('active');
+    }
+
+    
+    const footerTop = footer.getBoundingClientRect().top + scrollY;
+
+    
+    const overlap = scrollY + windowH - footerTop;
+
+    if (overlap > 0) {
+      tg.style.bottom = baseBottom + overlap + 'px';
+    } else {
+      tg.style.bottom = baseBottom + 'px';
+    }
+  });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tgFloat = document.getElementById('tgFloat');
+  const tgContacts = document.querySelector('.contacts__tg-float');
+  const contacts = document.querySelector('.contacts__right');
+
+  if (!tgFloat || !tgContacts || !contacts) return;
+
+  function handleTG() {
+    // только мобилка
+    if (window.innerWidth > 770) {
+      tgFloat.classList.remove('tg-hidden');
+      tgContacts.classList.remove('active');
+      return;
+    }
+
+    const contactsTop = contacts.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (contactsTop < windowHeight - 330) {
+      // контакты видны
+      tgFloat.classList.add('tg-hidden');
+      tgContacts.classList.add('active');
+    } else {
+      // контактов нет
+      tgFloat.classList.remove('tg-hidden');
+      tgContacts.classList.remove('active');
+    }
+  }
+
+  window.addEventListener('scroll', handleTG);
+  window.addEventListener('resize', handleTG);
+  handleTG();
+});
+
